@@ -5,24 +5,27 @@
 The HDL Buspro integration allows you to control your HDL Buspro system from Home Assistant.
 
 ## Installation
-Under HACS -> Integrations, add custom repository "https://github.com/eyesoft/home_assistant_buspro/" with Category "Integration". Select the integration named "HDL Buspro" and download it.
+Under HACS -> Integrations, add custom repository "https://github.com/samirsommaior/home_assistant_buspro/" with Category "Integration". Select the integration named "HDL Buspro" and download it.
 
 Restart Home Assistant.
 
 Go to Settings > Integrations and Add Integration "HDL Buspro". Type in IP address and port number of the gateway.
 
-### Advanced Port Configuration
+### Advanced Port Configuration (New Feature)
 
-By default, the integration uses the same port number for both sending and receiving UDP packets. If your network setup requires different ports for sending and receiving, you can configure them separately:
+By default, the integration uses the same port number for both sending and receiving UDP packets. As of version 1.6.0, you can now configure different ports for sending and receiving if your network setup requires it:
 
 - **Port**: The default port used for both sending and receiving (required)
 - **Send Port**: The port used for sending packets to the HDL gateway (optional, defaults to Port)
 - **Receive Port**: The port used for receiving packets from the HDL gateway (optional, defaults to Port)
 
-This is useful in scenarios where:
+This feature is particularly useful in scenarios where:
 - Your gateway is behind a NAT/firewall with port forwarding
 - You need to use different ports for security or network policy reasons
 - Your HDL system requires asymmetric port configuration
+- You have complex network setups with specific routing requirements
+
+**Note**: This feature maintains full backward compatibility. Existing configurations will continue to work without any changes.
 
 ## Configuration
 
