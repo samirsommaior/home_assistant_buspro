@@ -11,6 +11,19 @@ Restart Home Assistant.
 
 Go to Settings > Integrations and Add Integration "HDL Buspro". Type in IP address and port number of the gateway.
 
+### Advanced Port Configuration
+
+By default, the integration uses the same port number for both sending and receiving UDP packets. If your network setup requires different ports for sending and receiving, you can configure them separately:
+
+- **Port**: The default port used for both sending and receiving (required)
+- **Send Port**: The port used for sending packets to the HDL gateway (optional, defaults to Port)
+- **Receive Port**: The port used for receiving packets from the HDL gateway (optional, defaults to Port)
+
+This is useful in scenarios where:
+- Your gateway is behind a NAT/firewall with port forwarding
+- You need to use different ports for security or network policy reasons
+- Your HDL system requires asymmetric port configuration
+
 ## Configuration
 
 #### Light platform
